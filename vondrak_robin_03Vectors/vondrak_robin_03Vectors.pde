@@ -2,7 +2,7 @@
 //Robin Vondrak
 //GP20
 //https://github.com/yrgo/gp20/tree/master/Programming%20Fundamentals/02%20-%20Learning%20to%20Program
-//2020-09-XX
+//2020-09-10
 
 static final int FPS = 60;
 static final int MOUSE_LEFT = 37, MOUSE_RIGHT = 39;
@@ -32,9 +32,7 @@ void UpdateInput()
 	if (mousePressed && mouseButton == MOUSE_RIGHT && !mouseDown)
 	{
 		mouseDown = true;
-		println("Button: " + mouseButton);
 		ball.position = new PVector(mouseX, mouseY);
-
 	}
 	else if (!mousePressed)
 	{
@@ -61,8 +59,6 @@ class Ball
 	void UpdateDirection()
 	{
 		PVector legnth = new PVector(position.x - mouseX, position.y - mouseY);
-		println((norm(legnth.mag(), 0, FORCE_TOP) * legnthEffect) + speed);
-
 		direction.add(legnth.setMag((norm(legnth.mag(), 0, FORCE_TOP) * legnthEffect) + speed));
 		direction.limit(maxSpeed);
 	}
