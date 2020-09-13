@@ -10,6 +10,11 @@ class Vector2 {
 	private float _y;
 	
 	//---CONSTRUCTOR---
+	Vector2 ()
+	{
+		_x = 0;
+		_y = 0;
+	}
 	Vector2 (float x, float y)
 	{
 		_x = x;
@@ -109,6 +114,19 @@ class Vector2 {
 	//---TO STRING---
 	String ToString()
 	{
-		return str(_x + ", " + _y);
+		return str(_x) + ", " + str(_y);
+	}
+	String ToString(Class<?> type)
+	{
+		if (type == int.class)
+			return str(round(_x)) + ", " + str(round(_y));
+		else
+			return ToString();
+	}
+	//---RANDOM---
+	void Randomize(float xMin, float xMax, float yMin, float yMax)
+	{
+		_x = random(xMin, xMax);
+		_y = random(yMin, yMax);
 	}
 };
