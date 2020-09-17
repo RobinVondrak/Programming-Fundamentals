@@ -2,7 +2,7 @@
 //GP20
 //Robin Vondrak
 //https://github.com/yrgo/gp20/tree/master/Programming%20Fundamentals/03%20-%20Vectors
-//2020-09-XX
+//2020-09-13
 
 class Vector2 {
 
